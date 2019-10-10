@@ -57,7 +57,7 @@ The players section should be an Inn of characters they have made. Allowing them
 #### FURTHER IDEAS
 #### ===============================================================================
 
-Sound board / music
-game genre theming
-level testing area
-practice dumby
+- Sound board / music
+- game genre theming
+- level testing area
+- practice dumby
