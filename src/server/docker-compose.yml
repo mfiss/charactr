@@ -1,0 +1,23 @@
+version: '2.1'
+
+services:
+    server:
+        image: server
+        restart: always
+        build: .
+        environment:
+            NODE_ENV: development
+        ports:
+            - 8000:8000
+        links:
+            - mongo
+    mongo:
+        container_name: mongo
+        image: mongo
+        volumes:
+            - charactr-data:/data/db
+        ports:
+            - 27017:27017
+
+volumes:
+    charactr-data:
