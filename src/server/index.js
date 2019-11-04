@@ -1,6 +1,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const mongoose = require('mongoose');
+const { mongooseConnect } = require('./models');
 
 const typeDefs = require('./schemas');
 const resolvers = require('./resolvers');
@@ -17,8 +18,7 @@ const port = 8000;
 server.applyMiddleware({ app, path: '/graphql' });
 
 mongoose.Promise = global.Promise;
-mongoose
-	.connect('mongodb://mongo:27017', { useNewUrlParser: true })
+mongooseConnect
 	.then(() => {
 		app.listen({ port }, () => {
 			console.log(`Apollo Server running on port ${port}/graphql`);
